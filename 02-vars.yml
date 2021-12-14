@@ -35,3 +35,10 @@
 #          msg: URL = {{URL}}
 
 # if we declare variable in task, the variable works only that task.
+
+- name: demo on inventory variables
+  hosts: all
+  tasks:
+    - name: access URL invenroty
+      ansible.builtin.debug:
+        msg: URL = {{URL}}
