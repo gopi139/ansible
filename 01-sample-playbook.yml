@@ -1,0 +1,10 @@
+- name: play 1
+  hosts: all
+  tasks:
+    - name: print task 1
+      ansinble.builtin.debug:
+         msg: "task 1"
+
+    - name: print task 2
+      ansible.builtin.debug:
+         msg: "task 2"
