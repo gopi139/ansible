@@ -39,6 +39,6 @@
 - name: demo on Inventory variables
   hosts: all
   tasks:
-    - name: access URL invenroty
+    - name: access URL Invenroty
       ansible.builtin.debug:
         msg: URL = {{URL}}
