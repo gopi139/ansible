@@ -55,6 +55,6 @@
   vars:
     URL1: play.example.com
   tasks:
-    -name: access URL1
+    -name: print URL1
      ansible.builtin.debug:
        msg: URL1 = {{URL1}}
