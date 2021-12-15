@@ -5,3 +5,7 @@
 - name: print welcome
   ansible.builtin.debug:
     msg: "welcome"
+
+- name: variables
+  ansible.builtin.debug:
+    msg: "URL = {{URL}}"
