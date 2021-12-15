@@ -83,4 +83,4 @@
 # OUT is a variable
     - name: print OUT
       ansible.builtin.debug:
-        msg: "{{OUT}}"
+        msg: "{{OUT .stdout}}"
