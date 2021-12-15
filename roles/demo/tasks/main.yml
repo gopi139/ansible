@@ -1,3 +1,7 @@
 - name: print hello from role
   ansible.builtin.debug:
     msg: "hello"
+
+- name: print welcome
+  ansible.builtin.debug:
+    msg: "welcome"
