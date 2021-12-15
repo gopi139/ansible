@@ -84,3 +84,8 @@
     - name: print OUT
       ansible.builtin.debug:
         msg: "{{OUT .stdout}}"
+
+# no need of quotes while accessing and declare of variables
+#quotes are required when start withs variables ex: {{URL}} hello
+# when we use booleans in quotes it considered as string
+#number quoted are not considered as  string. it considered as number only
