@@ -68,4 +68,4 @@
   tasks:
     - name: print a fact
       ansible.builtin.debug:
-        - msg: "HOST OS = {{ansible_distribution}}"
+        msg: "HOST OS = {{ansible_distribution}}"
