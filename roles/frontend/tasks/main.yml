@@ -8,3 +8,8 @@
     state: restarted
     name: nginx
     enabled: yes
+
+- name: download code
+  include_role:
+    name: common
+    tasks_from: download
