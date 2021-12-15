@@ -79,5 +79,5 @@
   tasks:
     - name: get uptime command output
       ansible.builtin.shell: uptime
-      registet: OUT
+      register: OUT
 # OUT is a variable
