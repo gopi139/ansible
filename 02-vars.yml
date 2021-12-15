@@ -1,54 +1,54 @@
-#- name: play level variable
-#  hosts: all
-#  vars:
-#    URL: play.example.com
-#  tasks:
-#    - name: access URL in task 1
-#      ansible.builtin.debug:
-#        msg: URL in task 1 = {{URL}}
-#
-#    - name: access URL in task 2
-#      ansible.builtin.debug:
-#        msg: URL in task 2 = {{URL}}
-## declare variable in play level then all the tasks access that variable
-#
-#- name: demo on file variables
-#  hosts: all
-#  vars_files:
-#    sample-vars.yml
-#  tasks:
-#    - name: access URL
-#      ansible.builtin.debug:
-#        msg: URL = {{URL}}
-#
-#- name: demo on task variables
-#  hosts: all
-#  tasks:
-#    - name: access URL in task var
-#      ansible.builtin.debug:
-#        msg: URL = {{URL}}
-#      vars:
-#        URL: task.google.com
-#
-##    - name: access URL in previous task
-##        ansible.builtin.debug:
-##          msg: URL = {{URL}}
-#
-## if we declare variable in task, the variable works only that task.
-#
-#- name: demo on Inventory variables
-#  hosts: all
-#  tasks:
-#    - name: access URL Invenroty
-#      ansible.builtin.debug:
-#        msg: URL = {{URL}}
-#
-#- name: demo on cli variabes
-#  hosts: all
-#  tasks:
-#    - name: access URL cli
-#      ansible.builtin.debug:
-#        msg: URL = {{URL}}
+- name: play level variable
+  hosts: all
+  vars:
+    URL: play.example.com
+  tasks:
+    - name: access URL in task 1
+      ansible.builtin.debug:
+        msg: URL in task 1 = {{URL}}
+
+    - name: access URL in task 2
+      ansible.builtin.debug:
+        msg: URL in task 2 = {{URL}}
+# declare variable in play level then all the tasks access that variable
+
+- name: demo on file variables
+  hosts: all
+  vars_files:
+    sample-vars.yml
+  tasks:
+    - name: access URL
+      ansible.builtin.debug:
+        msg: URL = {{URL}}
+
+- name: demo on task variables
+  hosts: all
+  tasks:
+    - name: access URL in task var
+      ansible.builtin.debug:
+        msg: URL = {{URL}}
+      vars:
+        URL: task.google.com
+
+#    - name: access URL in previous task
+#        ansible.builtin.debug:
+#          msg: URL = {{URL}}
+
+# if we declare variable in task, the variable works only that task.
+
+- name: demo on Inventory variables
+  hosts: all
+  tasks:
+    - name: access URL Invenroty
+      ansible.builtin.debug:
+        msg: URL = {{URL}}
+
+- name: demo on cli variabes
+  hosts: all
+  tasks:
+    - name: access URL cli
+      ansible.builtin.debug:
+        msg: URL = {{URL}}
 
 - name: demo on precedence
   hosts: all
@@ -60,5 +60,5 @@
     - name: print URL1
       ansible.builtin.debug:
         msg: URL1 = {{URL1}}
-#      vars:
- #       URL1: task.google.com
+      vars:
+       URL1: task.google.com
