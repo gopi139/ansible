@@ -57,6 +57,8 @@
   vars_files:
     - sample-vars.yml
   tasks:
-    -name: print URL1
-     ansible.builtin.debug:
-       msg: URL1 = {{URL1}}
+    - name: print URL1
+      ansible.builtin.debug:
+        msg: URL1 = {{URL1}}
+        vars:
+          URL1: task.google.com
