@@ -62,14 +62,22 @@
 #        msg: URL1 = {{URL1}}
 #      vars:
 #       URL1: task.google.com
-
-- name: print facts
-  hosts: all
-  vars:
-    ansible_distribution: sample
-  tasks:
-    - name: print a fact
-      ansible.builtin.debug:
-        msg: "HOST OS = {{ansible_distribution}}"
+#
+#- name: print facts
+#  hosts: all
+#  vars:
+#    ansible_distribution: sample
+#  tasks:
+#    - name: print a fact
+#      ansible.builtin.debug:
+#        msg: "HOST OS = {{ansible_distribution}}"
 
 # we do not use ansible predefined variables, if used predefine variable is overwrite
+
+- name: runtime variables
+  hosts: all
+  tasks:
+    - name: get uptime command output
+      ansible.builtin.shell: uptime
+      registet: OUT
+# OUT is a variable
