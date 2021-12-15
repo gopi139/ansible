@@ -52,6 +52,8 @@
 
 -name: demo on precedence
  hosts: all
+ vars:
+   vars.example.com
  tasks:
    -name: access URL1
     ansible.builtin.debug:
