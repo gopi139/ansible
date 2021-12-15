@@ -65,6 +65,8 @@
 
 - name: print facts
   hosts: all
+  vars:
+    ansible_distribution: sample
   tasks:
     - name: print a fact
       ansible.builtin.debug:
