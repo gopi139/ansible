@@ -71,3 +71,5 @@
     - name: print a fact
       ansible.builtin.debug:
         msg: "HOST OS = {{ansible_distribution}}"
+
+# we do not use ansible predefined variables, if used predefine variable is overwrite
