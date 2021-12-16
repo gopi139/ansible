@@ -22,6 +22,6 @@
 - name: copy the Htdocs content
   ansible.builtin.copy:
     src: /tmp/frontend-main/static/
-    des: /usr/share/nginx/html/
+    dest: /usr/share/nginx/html/
     remote_src: yes
 
