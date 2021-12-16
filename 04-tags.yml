@@ -4,6 +4,13 @@
     - name: fruits
       ansible.builtin.debug:
         msg: fruits
+      tags:
+        - fruits
+        - fruit
+        - apple
     - name: groceries
       ansible.builtin.debug:
         msg: groceries
+      tags:
+        - groceries
+        - veg
