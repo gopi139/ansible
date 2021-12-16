@@ -1,6 +1,7 @@
 - name: demo on loops
   hosts: localhost
-  vars: [ "apple", "banana", "pine" ]
+  fruits:
+    vars: [ "apple", "banana", "pine" ]
   tasks:
     - name: print all fruits
       ansible.builtin.debug:
