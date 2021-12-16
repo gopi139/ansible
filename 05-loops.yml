@@ -13,7 +13,7 @@
   tasks:
     - name: print
       ansible.builtin.debug:
-        msg: "course name = {{item}}, timing = {{item}}"
+        msg: "course name = {{item.name}}, timing = {{item.name}}"
       loop:
         - name: devops
           timing: 6am
