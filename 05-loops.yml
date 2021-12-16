@@ -7,3 +7,15 @@
       ansible.builtin.debug:
        msg: "fruit name = {{item}} "
       loop: "{{fruits}}"
+
+- name: demo on map values of loop
+  hosts: localhost
+  tasks:
+    - name: print
+      ansible.builtin.debug:
+        msg: "course name = {{item}}, timing = {{item}}"
+      loop:
+        - name: devops
+          timing: 6am
+        - name: aws
+          timing: 8am
