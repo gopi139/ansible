@@ -1,3 +1,4 @@
+# tags are used to call perticular components only.
 - name: demo on tags
   hosts: localhost
   tasks:
