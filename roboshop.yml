@@ -12,4 +12,11 @@
   roles:
     - mongodb
 
+- name: set up catalogue
+  hosts: catalogue
+  become: true
+  tags: catalogue
+  roles:
+    - catalogue
+
 
