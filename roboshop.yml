@@ -19,4 +19,10 @@
   roles:
     - catalogue
 
+- name: set up redis
+  hosts: radis
+  become: true
+  tags: redis
+  roles:
+    - redis
 
