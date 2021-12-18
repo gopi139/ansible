@@ -1,0 +1,43 @@
+
+- name: install nodejs
+  ansible.builtin.yum:
+    name: [ "nodejs", "make", "gcc-c++"]
+    state: present
+
+- name: add roboshop app user
+  ansible.builtin.user:
+    name: roboshop
+
+- name: download code
+  ansible.include_role:
+    name: common
+    tasks_from: download
+
+- name: remove existing code
+  ansible.builtin.file:
+    path: /home/roboshop/{{COMPONENT}}
+    state: absent
+
+- name: copy app code
+  ansible.builtin.copy:
+    src: /tmp/catalogue-main/
+    dest: /home/roboshop/{{COMPONENT}}
+    remote_src: true
+  become_user: roboshop
+
+- name: Install nodejs dependencies
+  community.general.npm:
+    path:  /home/roboshop/{{COMPONENT}}
+  become_user: roboshop
+
+- name: update systemd file
+  template:
+    src: systemd.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
+
+- name: start {{COMPONENT}} service
+  ansible.builtin.systemd:
+    name: {{COMPONENT}}
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
