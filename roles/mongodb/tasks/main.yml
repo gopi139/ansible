@@ -31,5 +31,5 @@
     idempotent: yes
   loop:
     - catalogue
-    - user
+    - users
 
