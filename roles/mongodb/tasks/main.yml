@@ -24,3 +24,12 @@
   include_role:
     name: common
     tasks_from: download
+
+- name: load schema
+  community.mongodb.mongodb_shell:
+    file: /tmp/mongodb-main/{{item}}.js
+    idempotent: yes
+  loop:
+    - catalogue
+    - user
+
