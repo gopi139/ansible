@@ -20,7 +20,7 @@
     - catalogue
 
 - name: set up redis
-  hosts: radis
+  hosts: redis
   become: true
   tags: redis
   roles:
