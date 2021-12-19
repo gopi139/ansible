@@ -47,3 +47,10 @@
   tags: mysql
   roles:
     - mysql
+
+- name: set up Shipping
+  hosts: shipping
+  become: true
+  tags: shipping
+  roles:
+    - shipping
