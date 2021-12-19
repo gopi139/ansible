@@ -73,3 +73,12 @@
   ansible.builtin.debug:
     msg: "{{CHECK_NEW_PASSWORD}}"
 
+- name: copy password reset sql file
+  ansible.builtin.template:
+    src: pass.sql
+    dest: /tmp/pass.sql
+  when: CHECK_NEW_PASSWORD.failed
+
+- name: reset password
+  ansible.builtin.shell: mysql --connect-expired-password -uroot -p"{{DEFAULT_PASSWORD.stdout}}" </tmp/pass.sql
+    when: CHECK_NEW_PASSWORD.failed
