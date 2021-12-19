@@ -1,2 +1,2 @@
-ALTER USER 'root'@'localhost' identified by '{{NEW_PASSWORD}}'
+ALTER USER 'root'@'localhost' IDENTIFIED by '{{NEW_PASSWORD}}'
 uninstall piugin validate_password;
