@@ -73,6 +73,7 @@
   ansible.builtin.debug:
     msg: "{{CHECK_NEW_PASSWORD}}"
 
+- name: copy password reset sql file
   ansible.builtin.template:
     src: pass.sql
     dest: /tmp/pass.sql
