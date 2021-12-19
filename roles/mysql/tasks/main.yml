@@ -39,10 +39,10 @@
 #    # cd mysql-main
 #    # mysql -u root -pRoboShop@1 <shipping.sql
 
-- name: setup mysql repo
+- name: setup MySQL repo
   ansible.builtin.copy:
     src: mysql.repo
-    dest: /etc/yum.repos.d/mysql,repo
+    dest: /etc/yum.repos.d/mysql.repo
 
 - name: remove mariadb
   ansible.builtin.yum:
