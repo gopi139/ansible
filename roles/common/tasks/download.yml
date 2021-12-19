@@ -13,7 +13,7 @@
   ansible.builtin.file:
     path: "{{APP_LOCATION}}"
     state: absent
-  when: APP-TYPE == "frontend" or APP-TYPE == "backend"
+  when: APP_TYPE == "frontend" or APP_TYPE == "backend"
 
 - name: copy app code
   ansible.builtin.copy:
