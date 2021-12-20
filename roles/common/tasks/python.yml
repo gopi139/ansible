@@ -23,7 +23,7 @@
 #  # systemctl start payment
 
 - name: install Python
-  ansible.builtin.yml:
+  ansible.builtin.yum:
     name:
       - python36
       - gcc
