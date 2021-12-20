@@ -12,7 +12,9 @@
     APP_USER: roboshop
 
 - name: make maven package
-  ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
+  ansible.builtin.shell:
+     cmd: mvn clean package && mv target/shipping-1.0.jar shipping.jar
+     chdir: "/home/roboshop/{{COMPONENT}}"
   become_user: roboshop
 
 - name: download systemD
