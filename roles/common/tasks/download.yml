@@ -15,7 +15,8 @@
     path: "{{APP_LOCATION}}"
     state: absent
   when: APP_TYPE == "frontend" or APP_TYPE == "backend"
-
+  vars:
+    APP_LOCATION: /usr/share/nginx/html
 
 - name: copy app code
   ansible.builtin.copy:
