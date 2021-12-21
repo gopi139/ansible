@@ -1,7 +1,7 @@
 - name: vault
   hosts: localhost
   vars:
-    pass: !vault |
+    PASS: !vault |
                   $ANSIBLE_VAULT;1.1;AES256
                   32653266363364316664613566643463336633346537646230616362613439666364333265393131
                   3563303766326532636666336435316231646338363531620a636165396131333733393430313838
@@ -11,4 +11,4 @@
   tasks:
    - name: print password
      ansible.builtin.debug:
-       msg: "{{pass}}"
+       msg: "{{PASS}}"
