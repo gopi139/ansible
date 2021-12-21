@@ -1,6 +1,6 @@
 -name: vault
  hosts: localhost
- vars;
+ vars:
    pass: !vault |
                   $ANSIBLE_VAULT;1.1;AES256
                   32653266363364316664613566643463336633346537646230616362613439666364333265393131
