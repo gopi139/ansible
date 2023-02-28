@@ -9,6 +9,7 @@
         - fruits
         - fruit
         - apple
+        - banana
     - name: groceries
       ansible.builtin.debug:
         msg: groceries
